@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asher's Websites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a2a4a 0%, #2d4a6f 30%, #1e3a5f 70%, #152238 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #f5a623;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .title-icon {
+            font-size: 3rem;
+            vertical-align: middle;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 750px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a2a4a;
+            margin-bottom: 8px;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Individual card accent colors on hover */
+        .card.math:hover {
+            background: linear-gradient(180deg, #fff 0%, #fff5e6 100%);
+        }
+
+        .card.science:hover {
+            background: linear-gradient(180deg, #fff 0%, #e6fff5 100%);
+        }
+
+        .card.reading:hover {
+            background: linear-gradient(180deg, #fff 0%, #f5e6ff 100%);
+        }
+
+        .card.chess:hover {
+            background: linear-gradient(180deg, #fff 0%, #e6f0ff 100%);
+        }
+
+        .card.sports:hover {
+            background: linear-gradient(180deg, #fff 0%, #ffe6e6 100%);
+        }
+
+        .card.arts:hover {
+            background: linear-gradient(180deg, #fff 0%, #ffffe6 100%);
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 50px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .title-icon {
+                font-size: 1.5rem;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .card {
+                padding: 25px 20px;
+            }
+
+            .card-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <span class="title-icon">⭐</span>
+            Asher's Websites
+            <span class="title-icon">⭐</span>
+        </h1>
+        <p class="subtitle">Fun learning adventures!</p>
+    </header>
+
+    <main class="cards-container">
+        <a href="#" class="card math">
+            <span class="card-icon">🧮</span>
+            <h2 class="card-title">Math</h2>
+            <p class="card-description">Numbers, counting, and problem solving</p>
+        </a>
+
+        <a href="#" class="card science">
+            <span class="card-icon">🔬</span>
+            <h2 class="card-title">Science</h2>
+            <p class="card-description">Discover how the world works</p>
+        </a>
+
+        <a href="#" class="card reading">
+            <span class="card-icon">📚</span>
+            <h2 class="card-title">Reading & Writing</h2>
+            <p class="card-description">Stories, letters, and words</p>
+        </a>
+
+        <a href="#" class="card chess">
+            <span class="card-icon">♟️</span>
+            <h2 class="card-title">Chess</h2>
+            <p class="card-description">Strategy and tactics on the board</p>
+        </a>
+
+        <a href="#" class="card sports">
+            <span class="card-icon">⚽</span>
+            <h2 class="card-title">Sports</h2>
+            <p class="card-description">Games, fitness, and teamwork</p>
+        </a>
+
+        <a href="#" class="card arts">
+            <span class="card-icon">🎨</span>
+            <h2 class="card-title">Arts & Crafts</h2>
+            <p class="card-description">Create, paint, and build</p>
+        </a>
+    </main>
+
+    <footer>
+        Made with ❤️ for Asher
+    </footer>
+</body>
+</html>
+
