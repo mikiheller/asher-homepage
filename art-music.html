@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asher's Websites</title>
+    <title>Art & Music - Asher's Websites</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -22,6 +22,32 @@
             flex-direction: column;
             align-items: center;
             padding: 40px 20px;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            border-radius: 12px;
+            padding: 12px 20px;
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .home-button:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(-3px);
         }
 
         header {
@@ -72,6 +98,7 @@
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(180deg, #fff 0%, #fff5e6 100%);
         }
 
         .card-icon {
@@ -91,37 +118,6 @@
             font-size: 1rem;
             color: #666;
             line-height: 1.4;
-        }
-
-        /* Individual card accent colors on hover */
-        .card.math:hover {
-            background: linear-gradient(180deg, #fff 0%, #fff5e6 100%);
-        }
-
-        .card.science:hover {
-            background: linear-gradient(180deg, #fff 0%, #e6fff5 100%);
-        }
-
-        .card.reading:hover {
-            background: linear-gradient(180deg, #fff 0%, #f5e6ff 100%);
-        }
-
-        .card.games:hover {
-            background: linear-gradient(180deg, #fff 0%, #e6f0ff 100%);
-        }
-
-        .card.health:hover {
-            background: linear-gradient(180deg, #fff 0%, #ffe6e6 100%);
-        }
-
-        .card.art-music:hover {
-            background: linear-gradient(180deg, #fff 0%, #ffffe6 100%);
-        }
-
-        .card.disabled {
-            opacity: 0.6;
-            cursor: default;
-            pointer-events: none;
         }
 
         footer {
@@ -153,54 +149,34 @@
             .card-icon {
                 font-size: 3rem;
             }
+
+            .home-button {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <a href="index.html" class="home-button">
+        <span>🏠</span>
+        <span>Home</span>
+    </a>
+
     <header>
         <h1>
-            <span class="title-icon">⭐</span>
-            Asher's Websites
-            <span class="title-icon">⭐</span>
+            <span class="title-icon">🎵</span>
+            Art & Music
+            <span class="title-icon">🎵</span>
         </h1>
-        <p class="subtitle">Fun learning adventures!</p>
+        <p class="subtitle">Create, draw, and sing along</p>
     </header>
 
     <main class="cards-container">
-        <a href="math.html" class="card math">
-            <span class="card-icon">🧮</span>
-            <h2 class="card-title">Math</h2>
-            <p class="card-description">Numbers, counting, and problem solving</p>
-        </a>
-
-        <a href="science.html" class="card science">
-            <span class="card-icon">🔬</span>
-            <h2 class="card-title">Science</h2>
-            <p class="card-description">Discover how the world works</p>
-        </a>
-
-        <a href="reading.html" class="card reading">
-            <span class="card-icon">📚</span>
-            <h2 class="card-title">Reading & Writing</h2>
-            <p class="card-description">Stories, letters, and words</p>
-        </a>
-
-        <a href="games.html" class="card games">
-            <span class="card-icon">🧠</span>
-            <h2 class="card-title">Logic Games</h2>
-            <p class="card-description">Chess, puzzles, and brain teasers</p>
-        </a>
-
-        <a href="health.html" class="card health">
-            <span class="card-icon">💪</span>
-            <h2 class="card-title">Health & Fitness</h2>
-            <p class="card-description">Healthy eating and staying active</p>
-        </a>
-
-        <a href="art-music.html" class="card art-music">
-            <span class="card-icon">🎵</span>
-            <h2 class="card-title">Art & Music</h2>
-            <p class="card-description">Create, draw, and sing along</p>
+        <a href="karaoke.html" class="card">
+            <span class="card-icon">🎤</span>
+            <h2 class="card-title">Karaoke</h2>
+            <p class="card-description">Sing along to your favorite songs!</p>
         </a>
     </main>
 
