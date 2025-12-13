@@ -48,13 +48,50 @@
             font-weight: 400;
         }
 
+        .cards-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 750px;
+            padding: 0 20px;
+            gap: 25px;
+        }
+
+        .featured-cards {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .featured-card {
+            flex: 1;
+            max-width: 350px;
+            border: 3px solid #f5a623;
+        }
+
+        .featured-card.schedule {
+            background: linear-gradient(135deg, #fff 0%, #e6f7ff 100%);
+        }
+
+        .featured-card.diamonds {
+            background: linear-gradient(135deg, #fff 0%, #f3e6ff 100%);
+        }
+
+        .featured-card .card-icon {
+            font-size: 4rem;
+        }
+
+        .featured-card .card-title {
+            font-size: 1.6rem;
+        }
+
         .cards-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            max-width: 750px;
             width: 100%;
-            padding: 0 20px;
         }
 
         .card {
@@ -118,6 +155,10 @@
             background: linear-gradient(180deg, #fff 0%, #ffffe6 100%);
         }
 
+        .card.schedule:hover {
+            background: linear-gradient(180deg, #fff 0%, #e6f7ff 100%);
+        }
+
         .card.disabled {
             opacity: 0.6;
             cursor: default;
@@ -143,7 +184,16 @@
 
             .cards-container {
                 grid-template-columns: 1fr;
-                max-width: 400px;
+            }
+
+            .featured-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .featured-card {
+                max-width: 100%;
+                width: 100%;
             }
 
             .card {
@@ -152,6 +202,10 @@
 
             .card-icon {
                 font-size: 3rem;
+            }
+
+            .featured-card .card-icon {
+                font-size: 3.5rem;
             }
         }
     </style>
@@ -166,42 +220,58 @@
         <p class="subtitle">Fun learning adventures!</p>
     </header>
 
-    <main class="cards-container">
-        <a href="math.html" class="card math">
-            <span class="card-icon">🧮</span>
-            <h2 class="card-title">Math</h2>
-            <p class="card-description">Numbers, counting, and problem solving</p>
-        </a>
+    <main class="cards-wrapper">
+        <div class="featured-cards">
+            <a href="schedule.html" class="card schedule featured-card">
+                <span class="card-icon">📅</span>
+                <h2 class="card-title">My Schedule</h2>
+                <p class="card-description">Plan your day and earn diamonds!</p>
+            </a>
 
-        <a href="science.html" class="card science">
-            <span class="card-icon">🔬</span>
-            <h2 class="card-title">Science</h2>
-            <p class="card-description">Discover how the world works</p>
-        </a>
+            <a href="diamonds.html" class="card diamonds featured-card">
+                <span class="card-icon">💎</span>
+                <h2 class="card-title">Diamond Tracker</h2>
+                <p class="card-description">Log and track your diamonds!</p>
+            </a>
+        </div>
 
-        <a href="reading.html" class="card reading">
-            <span class="card-icon">📚</span>
-            <h2 class="card-title">Reading & Writing</h2>
-            <p class="card-description">Stories, letters, and words</p>
-        </a>
+        <div class="cards-container">
+            <a href="math.html" class="card math">
+                <span class="card-icon">🧮</span>
+                <h2 class="card-title">Math</h2>
+                <p class="card-description">Numbers, counting, and problem solving</p>
+            </a>
 
-        <a href="games.html" class="card games">
-            <span class="card-icon">🧠</span>
-            <h2 class="card-title">Logic Games</h2>
-            <p class="card-description">Chess, puzzles, and brain teasers</p>
-        </a>
+            <a href="science.html" class="card science">
+                <span class="card-icon">🔬</span>
+                <h2 class="card-title">Science</h2>
+                <p class="card-description">Discover how the world works</p>
+            </a>
 
-        <a href="health.html" class="card health">
-            <span class="card-icon">💪</span>
-            <h2 class="card-title">Health & Fitness</h2>
-            <p class="card-description">Healthy eating and staying active</p>
-        </a>
+            <a href="reading.html" class="card reading">
+                <span class="card-icon">📚</span>
+                <h2 class="card-title">Reading & Writing</h2>
+                <p class="card-description">Stories, letters, and words</p>
+            </a>
 
-        <a href="art-music.html" class="card art-music">
-            <span class="card-icon">🎵</span>
-            <h2 class="card-title">Art & Music</h2>
-            <p class="card-description">Create, draw, and sing along</p>
-        </a>
+            <a href="games.html" class="card games">
+                <span class="card-icon">🧠</span>
+                <h2 class="card-title">Logic Games</h2>
+                <p class="card-description">Chess, puzzles, and brain teasers</p>
+            </a>
+
+            <a href="health.html" class="card health">
+                <span class="card-icon">💪</span>
+                <h2 class="card-title">Health & Fitness</h2>
+                <p class="card-description">Healthy eating and staying active</p>
+            </a>
+
+            <a href="art-music.html" class="card art-music">
+                <span class="card-icon">🎵</span>
+                <h2 class="card-title">Art & Music</h2>
+                <p class="card-description">Create, draw, and sing along</p>
+            </a>
+        </div>
     </main>
 
     <footer>
