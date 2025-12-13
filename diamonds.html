@@ -341,7 +341,48 @@
 
         async function loadData() {
             try {
-                const response = await fetch(SCRIPT_URL);
+                // Use JSONP-style approach for Google Apps Script
+                const callbackName = 'callback_' + Date.now();
+                
+                const script = document.createElement('script');
+                script.src = SCRIPT_URL + '?callback=' + callbackName;
+                
+                window[callbackName] = function(data) {
+                    document.getElementById('loadingState').classList.add('hidden');
+                    document.getElementById('mainContent').classList.remove('hidden');
+                    updateDisplay(data);
+                    delete window[callbackName];
+                    script.remove();
+                };
+                
+                script.onerror = function() {
+                    // Fallback to regular fetch with redirect follow
+                    fetchData();
+                };
+                
+                document.body.appendChild(script);
+                
+                // Timeout fallback
+                setTimeout(() => {
+                    if (window[callbackName]) {
+                        fetchData();
+                    }
+                }, 5000);
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                fetchData();
+            }
+        }
+        
+        async function fetchData() {
+            try {
+                const response = await fetch(SCRIPT_URL, {
+                    redirect: 'follow',
+                    headers: {
+                        'Accept': 'application/json',
+                    }
+                });
                 const data = await response.json();
                 
                 document.getElementById('loadingState').classList.add('hidden');
