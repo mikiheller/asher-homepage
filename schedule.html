@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Schedule - Asher's Websites</title>
+    <title>My Activities - Asher's Websites</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -48,153 +48,39 @@
         }
 
         .main-container {
-            display: flex;
-            gap: 60px;
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        /* Left side - Schedule */
-        .schedule-side {
-            flex: 1;
-            max-width: 400px;
-        }
-
-        .schedule-title {
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .clear-schedule-btn {
-            background: none;
-            border: none;
-            font-size: 1.1rem;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            vertical-align: middle;
-            margin-left: 8px;
-        }
-
-        .clear-schedule-btn:hover {
-            opacity: 1;
-            transform: scale(1.2);
-        }
-
-        .time-slots-container {
-            background: white;
-            border-radius: 20px;
-            padding: 20px 25px;
-        }
-
-        .time-slot {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 8px 0;
-            transition: all 0.2s ease;
-        }
-
-        .time-slot.drag-over .slot-content {
-            background: #e8f4ff;
-            border-color: #4a90d9;
-        }
-
-        .time-label {
-            font-weight: 700;
-            color: #1a2a4a;
-            font-size: 0.95rem;
-            min-width: 130px;
-            flex-shrink: 0;
-        }
-
-        .slot-content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 38px;
-            border-radius: 10px;
-            color: #999;
-            font-size: 0.9rem;
-        }
-
-        .slot-content.empty {
-            border: 2px dashed #ccc;
-        }
-
-        .slot-content.filled {
-            border: none;
-        }
-
-        /* Placed activity in slot */
-        .placed-activity {
-            width: 100%;
-            padding: 8px 12px;
-            border-radius: 8px;
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .placed-activity:hover .remove-btn {
-            opacity: 1;
-        }
-
-        .remove-btn {
-            opacity: 0;
-            background: rgba(0, 0, 0, 0.3);
-            border: none;
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.2s ease;
-        }
-
-        .remove-btn:hover {
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        /* Diamond tally */
+        /* Diamond tally at top */
         .diamond-tally {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 15px;
             padding: 20px;
-            margin-top: 20px;
+            margin-bottom: 25px;
             text-align: center;
             color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .diamond-tally h3 {
             font-size: 1.1rem;
-            margin-bottom: 10px;
         }
 
         .diamond-count {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
         }
 
         .diamond-emoji {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
-        .log-diamonds-btn {
-            display: inline-block;
-            margin-top: 15px;
+        .tally-btn {
             background: rgba(255, 255, 255, 0.2);
             color: white;
             text-decoration: none;
@@ -203,25 +89,16 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: background 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Nunito', sans-serif;
         }
 
-        .log-diamonds-btn:hover {
+        .tally-btn:hover {
             background: rgba(255, 255, 255, 0.3);
         }
 
-        /* Right side - Activities */
-        .activities-side {
-            flex: 1.5;
-            max-width: 700px;
-        }
-
-        .activities-title {
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
+        /* Categories */
         .categories-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -229,16 +106,16 @@
         }
 
         .category {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             padding: 15px;
         }
 
         .category-title {
-            color: white;
+            color: #1a2a4a;
             font-size: 1rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -246,67 +123,250 @@
 
         .category-diamond {
             font-size: 0.8rem;
-            opacity: 0.9;
+            opacity: 0.7;
         }
 
-        .activity-blocks {
+        .activity-list {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
-        .activity-block {
-            padding: 10px 12px;
-            border-radius: 8px;
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: grab;
+        .activity-row {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            user-select: none;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background 0.2s ease;
         }
 
-        .activity-block:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        .activity-row:hover {
+            background: rgba(0, 0, 0, 0.03);
         }
 
-        .activity-block:active {
-            cursor: grabbing;
+        .activity-row.custom {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px dashed rgba(102, 126, 234, 0.3);
         }
 
-        .activity-block.dragging {
-            opacity: 0.5;
+        .activity-name {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #333;
         }
 
         .diamond-value {
             font-size: 0.75rem;
-            opacity: 0.9;
+            opacity: 0.7;
+            margin-right: 5px;
         }
 
-        /* Category Colors */
-        .fitness { background: linear-gradient(135deg, #f5a623 0%, #f7931e 100%); }
-        .brain-games { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
-        .music { background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); }
-        .learning { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
-        .creativity { background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); }
-        .relaxing { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+        .checkboxes {
+            display: flex;
+            gap: 4px;
+        }
+
+        .activity-checkbox {
+            width: 28px;
+            height: 28px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .activity-checkbox:hover {
+            border-color: #aaa;
+        }
+
+        .activity-checkbox.checked {
+            background: #27ae60;
+            border-color: #27ae60;
+            color: white;
+        }
+
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0.5;
+            transition: opacity 0.2s ease;
+            padding: 0 5px;
+        }
+
+        .delete-btn:hover {
+            opacity: 1;
+        }
+
+        /* Category color accents */
+        .category.fitness { border-left: 5px solid #f5a623; }
+        .category.brain-games { border-left: 5px solid #9b59b6; }
+        .category.music { border-left: 5px solid #27ae60; }
+        .category.learning { border-left: 5px solid #3498db; }
+        .category.creativity { border-left: 5px solid #f1c40f; }
+        .category.relaxing { border-left: 5px solid #e74c3c; }
+        .category.being-nice { border-left: 5px solid #ff6b9d; }
+        .category.custom { border-left: 5px solid #667eea; }
+
+        /* Add Activity Section */
+        .add-activity-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 5px solid #667eea;
+        }
+
+        .add-activity-section h3 {
+            color: #1a2a4a;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .add-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            padding: 10px 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #667eea;
+        }
+
+        .form-group.name {
+            flex: 2;
+            min-width: 150px;
+        }
+
+        .form-group.category-select {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .form-group.diamonds-select {
+            width: 100px;
+        }
+
+        .add-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .add-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .add-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Custom activities container */
+        .custom-activities-container {
+            margin-top: 10px;
+        }
+
+        .custom-activity-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: rgba(102, 126, 234, 0.08);
+            margin-bottom: 8px;
+        }
+
+        .custom-activity-row:hover {
+            background: rgba(102, 126, 234, 0.15);
+        }
+
+        .category-tag {
+            font-size: 0.7rem;
+            background: rgba(102, 126, 234, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #667eea;
+        }
+
+        .no-custom {
+            color: #999;
+            font-style: italic;
+            text-align: center;
+            padding: 15px;
+        }
 
         /* Responsive */
-        @media (max-width: 900px) {
-            .main-container {
+        @media (max-width: 700px) {
+            .categories-container {
+                grid-template-columns: 1fr;
+            }
+
+            .diamond-tally {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .activity-checkbox {
+                width: 24px;
+                height: 24px;
+                font-size: 14px;
+            }
+
+            .add-form {
                 flex-direction: column;
             }
 
-            .schedule-side, .activities-side {
-                max-width: 100%;
+            .form-group {
+                width: 100%;
             }
 
-            .categories-container {
-                grid-template-columns: 1fr;
+            .form-group.diamonds-select {
+                width: 100%;
             }
         }
     </style>
@@ -314,445 +374,612 @@
 <body>
     <header>
         <a href="index.html" class="home-link">← Back to Home</a>
-        <h1>📅 My Schedule</h1>
+        <h1>✨ My Activities</h1>
     </header>
 
     <div class="main-container">
-        <!-- Left side - Time slots -->
-        <div class="schedule-side">
-            <h2 class="schedule-title">Today's Plan <button class="clear-schedule-btn" onclick="clearSchedule()" title="Clear schedule and start fresh">🗑️</button></h2>
-            <div class="time-slots-container" id="timeSlots">
-                <!-- Time slots will be generated by JavaScript -->
+        <!-- Diamond tally -->
+        <div class="diamond-tally">
+            <h3>Diamonds Earned Today</h3>
+            <div class="diamond-count">
+                <span class="diamond-emoji">💎</span>
+                <span id="totalDiamonds">0</span>
             </div>
-            <div class="diamond-tally">
-                <h3>Diamonds Earned Today</h3>
-                <div class="diamond-count">
-                    <span class="diamond-emoji">💎</span>
-                    <span id="totalDiamonds">0</span>
+            <a href="diamonds.html" class="tally-btn">Log Diamonds →</a>
+            <button class="tally-btn" onclick="clearAllCheckmarks()">Clear All ✕</button>
+        </div>
+
+        <!-- Activities -->
+        <div class="categories-container">
+            <!-- Fitness -->
+            <div class="category fitness" data-category="fitness">
+                <h3 class="category-title">
+                    <span>🏃 Fitness</span>
+                    <span class="category-diamond">+1 💎 each</span>
+                </h3>
+                <div class="activity-list">
+                    <div class="activity-row" data-activity="Tennis" data-diamonds="1">
+                        <span class="activity-name">Tennis</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Ninja warrior obstacle course" data-diamonds="1">
+                        <span class="activity-name">Ninja warrior obstacle course</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Tonal" data-diamonds="1">
+                        <span class="activity-name">Tonal</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Trampoline" data-diamonds="1">
+                        <span class="activity-name">Trampoline</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Youtube fitness" data-diamonds="1">
+                        <span class="activity-name">Youtube fitness</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="VR Fitness" data-diamonds="1">
+                        <span class="activity-name">VR Fitness</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
                 </div>
-                <a href="diamonds.html" class="log-diamonds-btn">Log Diamonds →</a>
+            </div>
+
+            <!-- Brain Games -->
+            <div class="category brain-games" data-category="brain-games">
+                <h3 class="category-title">
+                    <span>🧠 Brain Games</span>
+                    <span class="category-diamond">+1 💎 each</span>
+                </h3>
+                <div class="activity-list">
+                    <div class="activity-row" data-activity="Chess" data-diamonds="1">
+                        <span class="activity-name">Chess</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Yinyang" data-diamonds="1">
+                        <span class="activity-name">Yinyang</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Operation" data-diamonds="1">
+                        <span class="activity-name">Operation</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Cars game" data-diamonds="1">
+                        <span class="activity-name">Cars game</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Minecraft explorers" data-diamonds="1">
+                        <span class="activity-name">Minecraft explorers</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Music -->
+            <div class="category music" data-category="music">
+                <h3 class="category-title">
+                    <span>🎵 Music</span>
+                    <span class="category-diamond">+1 💎 each</span>
+                </h3>
+                <div class="activity-list">
+                    <div class="activity-row" data-activity="Karaoke" data-diamonds="1">
+                        <span class="activity-name">Karaoke</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Ukulele" data-diamonds="1">
+                        <span class="activity-name">Ukulele</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Piano" data-diamonds="1">
+                        <span class="activity-name">Piano</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Dance party" data-diamonds="1">
+                        <span class="activity-name">Dance party</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning -->
+            <div class="category learning" data-category="learning">
+                <h3 class="category-title">
+                    <span>📚 Learning</span>
+                    <span class="category-diamond">+2 💎 each</span>
+                </h3>
+                <div class="activity-list">
+                    <div class="activity-row" data-activity="99 Nights Math" data-diamonds="2">
+                        <span class="activity-name">99 Nights Math</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Beast Academy" data-diamonds="2">
+                        <span class="activity-name">Beast Academy</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Reading comprehension" data-diamonds="2">
+                        <span class="activity-name">Reading comprehension</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Writing" data-diamonds="2">
+                        <span class="activity-name">Writing</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Human Body" data-diamonds="2">
+                        <span class="activity-name">Human Body</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Atoms" data-diamonds="2">
+                        <span class="activity-name">Atoms</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Evolution" data-diamonds="2">
+                        <span class="activity-name">Evolution</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Read a book" data-diamonds="2">
+                        <span class="activity-name">Read a book</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Youtube learning" data-diamonds="1">
+                        <span class="activity-name">Youtube learning</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creativity -->
+            <div class="category creativity" data-category="creativity">
+                <h3 class="category-title">
+                    <span>🎨 Creativity</span>
+                    <span class="category-diamond">+1 💎 each</span>
+                </h3>
+                <div class="activity-list">
+                    <div class="activity-row" data-activity="Drawing" data-diamonds="1">
+                        <span class="activity-name">Drawing</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Vibe coding" data-diamonds="1">
+                        <span class="activity-name">Vibe coding</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Legos" data-diamonds="1">
+                        <span class="activity-name">Legos</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Stop motion" data-diamonds="1">
+                        <span class="activity-name">Stop motion</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Fimo" data-diamonds="1">
+                        <span class="activity-name">Fimo</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Cooking" data-diamonds="1">
+                        <span class="activity-name">Cooking</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Relaxing -->
+            <div class="category relaxing" data-category="relaxing">
+                <h3 class="category-title">
+                    <span>😌 Relaxing</span>
+                    <span class="category-diamond">+0 💎</span>
+                </h3>
+                <div class="activity-list">
+                    <div class="activity-row" data-activity="Youtube" data-diamonds="0">
+                        <span class="activity-name">Youtube</span>
+                        <span class="diamond-value">+0 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Minecraft" data-diamonds="0">
+                        <span class="activity-name">Minecraft</span>
+                        <span class="diamond-value">+0 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Roblox" data-diamonds="0">
+                        <span class="activity-name">Roblox</span>
+                        <span class="diamond-value">+0 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Being Nice -->
+            <div class="category being-nice" data-category="being-nice">
+                <h3 class="category-title">
+                    <span>💖 Being Nice</span>
+                    <span class="category-diamond">+1 💎 each</span>
+                </h3>
+                <div class="activity-list">
+                    <div class="activity-row" data-activity="Nice to brothers" data-diamonds="1">
+                        <span class="activity-name">Nice to brothers</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Nice to mom and dad" data-diamonds="1">
+                        <span class="activity-name">Nice to mom and dad</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Nice to friends" data-diamonds="1">
+                        <span class="activity-name">Nice to friends</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Nice to teachers/adults" data-diamonds="1">
+                        <span class="activity-name">Nice to teachers/adults</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Nice to nature and world" data-diamonds="1">
+                        <span class="activity-name">Nice to nature and world</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row" data-activity="Really good playdate" data-diamonds="1">
+                        <span class="activity-name">Really good playdate</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Right side - Activities -->
-        <div class="activities-side">
-            <h2 class="activities-title">Drag Activities to Your Schedule</h2>
-            <div class="categories-container">
-                <!-- Fitness -->
-                <div class="category">
-                    <h3 class="category-title">
-                        <span>🏃 Fitness</span>
-                        <span class="category-diamond">+1 💎 each</span>
-                    </h3>
-                    <div class="activity-blocks">
-                        <div class="activity-block fitness" draggable="true" data-activity="Tennis" data-diamonds="1" data-category="fitness">
-                            <span>Tennis</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block fitness" draggable="true" data-activity="Ninja warrior obstacle course" data-diamonds="1" data-category="fitness">
-                            <span>Ninja warrior obstacle course</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block fitness" draggable="true" data-activity="Tonal" data-diamonds="1" data-category="fitness">
-                            <span>Tonal</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block fitness" draggable="true" data-activity="Trampoline" data-diamonds="1" data-category="fitness">
-                            <span>Trampoline</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block fitness" draggable="true" data-activity="Youtube fitness" data-diamonds="1" data-category="fitness">
-                            <span>Youtube fitness</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block fitness" draggable="true" data-activity="Quest fitness" data-diamonds="1" data-category="fitness">
-                            <span>Quest fitness</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block fitness" draggable="true" data-activity="Other fitness" data-diamonds="1" data-category="fitness">
-                            <span>Other</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                    </div>
+        <!-- Add New Activity Section -->
+        <div class="add-activity-section">
+            <h3>➕ Add New Activity</h3>
+            <div class="add-form">
+                <div class="form-group name">
+                    <label for="activityName">Activity Name</label>
+                    <input type="text" id="activityName" placeholder="e.g., Swimming">
                 </div>
-
-                <!-- Brain Games -->
-                <div class="category">
-                    <h3 class="category-title">
-                        <span>🧠 Brain Games</span>
-                        <span class="category-diamond">+1 💎 each</span>
-                    </h3>
-                    <div class="activity-blocks">
-                        <div class="activity-block brain-games" draggable="true" data-activity="Chess" data-diamonds="1" data-category="brain-games">
-                            <span>Chess</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block brain-games" draggable="true" data-activity="Yinyang" data-diamonds="1" data-category="brain-games">
-                            <span>Yinyang</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block brain-games" draggable="true" data-activity="Operation" data-diamonds="1" data-category="brain-games">
-                            <span>Operation</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block brain-games" draggable="true" data-activity="Cars game" data-diamonds="1" data-category="brain-games">
-                            <span>Cars game</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block brain-games" draggable="true" data-activity="Minecraft explorers" data-diamonds="1" data-category="brain-games">
-                            <span>Minecraft explorers</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block brain-games" draggable="true" data-activity="Other brain game" data-diamonds="1" data-category="brain-games">
-                            <span>Other</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                    </div>
+                <div class="form-group category-select">
+                    <label for="activityCategory">Category</label>
+                    <select id="activityCategory">
+                        <option value="fitness">🏃 Fitness</option>
+                        <option value="brain-games">🧠 Brain Games</option>
+                        <option value="music">🎵 Music</option>
+                        <option value="learning">📚 Learning</option>
+                        <option value="creativity">🎨 Creativity</option>
+                        <option value="relaxing">😌 Relaxing</option>
+                        <option value="being-nice">💖 Being Nice</option>
+                    </select>
                 </div>
-
-                <!-- Music -->
-                <div class="category">
-                    <h3 class="category-title">
-                        <span>🎵 Music</span>
-                        <span class="category-diamond">+1 💎 each</span>
-                    </h3>
-                    <div class="activity-blocks">
-                        <div class="activity-block music" draggable="true" data-activity="Karaoke" data-diamonds="1" data-category="music">
-                            <span>Karaoke</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block music" draggable="true" data-activity="Ukulele" data-diamonds="1" data-category="music">
-                            <span>Ukulele</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block music" draggable="true" data-activity="Piano" data-diamonds="1" data-category="music">
-                            <span>Piano</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block music" draggable="true" data-activity="Dance party" data-diamonds="1" data-category="music">
-                            <span>Dance party</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block music" draggable="true" data-activity="Other music" data-diamonds="1" data-category="music">
-                            <span>Other</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                    </div>
+                <div class="form-group diamonds-select">
+                    <label for="activityDiamonds">Diamonds</label>
+                    <select id="activityDiamonds">
+                        <option value="0">0 💎</option>
+                        <option value="1" selected>1 💎</option>
+                        <option value="2">2 💎</option>
+                        <option value="3">3 💎</option>
+                    </select>
                 </div>
-
-                <!-- Learning -->
-                <div class="category">
-                    <h3 class="category-title">
-                        <span>📚 Learning</span>
-                        <span class="category-diamond">+2 💎 each</span>
-                    </h3>
-                    <div class="activity-blocks">
-                        <div class="activity-block learning" draggable="true" data-activity="99 Nights Math" data-diamonds="2" data-category="learning">
-                            <span>99 Nights Math</span>
-                            <span class="diamond-value">+2 💎</span>
-                        </div>
-                        <div class="activity-block learning" draggable="true" data-activity="Beast Academy" data-diamonds="2" data-category="learning">
-                            <span>Beast Academy</span>
-                            <span class="diamond-value">+2 💎</span>
-                        </div>
-                        <div class="activity-block learning" draggable="true" data-activity="Reading comprehension" data-diamonds="2" data-category="learning">
-                            <span>Reading comprehension</span>
-                            <span class="diamond-value">+2 💎</span>
-                        </div>
-                        <div class="activity-block learning" draggable="true" data-activity="Writing" data-diamonds="2" data-category="learning">
-                            <span>Writing</span>
-                            <span class="diamond-value">+2 💎</span>
-                        </div>
-                        <div class="activity-block learning" draggable="true" data-activity="Human Body (biology)" data-diamonds="2" data-category="learning">
-                            <span>Human Body (biology)</span>
-                            <span class="diamond-value">+2 💎</span>
-                        </div>
-                        <div class="activity-block learning" draggable="true" data-activity="Atoms (physics)" data-diamonds="2" data-category="learning">
-                            <span>Atoms (physics)</span>
-                            <span class="diamond-value">+2 💎</span>
-                        </div>
-                        <div class="activity-block learning" draggable="true" data-activity="Read a book" data-diamonds="2" data-category="learning">
-                            <span>Read a book</span>
-                            <span class="diamond-value">+2 💎</span>
-                        </div>
-                        <div class="activity-block learning" draggable="true" data-activity="Youtube learning" data-diamonds="1" data-category="learning">
-                            <span>Youtube learning</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block learning" draggable="true" data-activity="Other learning" data-diamonds="2" data-category="learning">
-                            <span>Other</span>
-                            <span class="diamond-value">+2 💎</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Creativity -->
-                <div class="category">
-                    <h3 class="category-title">
-                        <span>🎨 Creativity</span>
-                        <span class="category-diamond">+1 💎 each</span>
-                    </h3>
-                    <div class="activity-blocks">
-                        <div class="activity-block creativity" draggable="true" data-activity="Drawing" data-diamonds="1" data-category="creativity">
-                            <span>Drawing</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block creativity" draggable="true" data-activity="Vibe coding" data-diamonds="1" data-category="creativity">
-                            <span>Vibe coding</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block creativity" draggable="true" data-activity="Legos" data-diamonds="1" data-category="creativity">
-                            <span>Legos</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block creativity" draggable="true" data-activity="Stop motion" data-diamonds="1" data-category="creativity">
-                            <span>Stop motion</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block creativity" draggable="true" data-activity="Fimo" data-diamonds="1" data-category="creativity">
-                            <span>Fimo</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block creativity" draggable="true" data-activity="Cooking" data-diamonds="1" data-category="creativity">
-                            <span>Cooking</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                        <div class="activity-block creativity" draggable="true" data-activity="Other creativity" data-diamonds="1" data-category="creativity">
-                            <span>Other</span>
-                            <span class="diamond-value">+1 💎</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Relaxing -->
-                <div class="category">
-                    <h3 class="category-title">
-                        <span>😌 Relaxing</span>
-                        <span class="category-diamond">+0 💎</span>
-                    </h3>
-                    <div class="activity-blocks">
-                        <div class="activity-block relaxing" draggable="true" data-activity="Youtube" data-diamonds="0" data-category="relaxing">
-                            <span>Youtube</span>
-                            <span class="diamond-value">+0 💎</span>
-                        </div>
-                        <div class="activity-block relaxing" draggable="true" data-activity="Minecraft" data-diamonds="0" data-category="relaxing">
-                            <span>Minecraft</span>
-                            <span class="diamond-value">+0 💎</span>
-                        </div>
-                        <div class="activity-block relaxing" draggable="true" data-activity="Roblox" data-diamonds="0" data-category="relaxing">
-                            <span>Roblox</span>
-                            <span class="diamond-value">+0 💎</span>
-                        </div>
-                        <div class="activity-block relaxing" draggable="true" data-activity="Other relaxing" data-diamonds="0" data-category="relaxing">
-                            <span>Other</span>
-                            <span class="diamond-value">+0 💎</span>
-                        </div>
-                    </div>
-                </div>
+                <button class="add-btn" id="addActivityBtn" onclick="addNewActivity()">Add Activity</button>
+            </div>
+            
+            <div class="custom-activities-container" id="customActivitiesContainer">
+                <div class="no-custom" id="noCustomMessage">Loading custom activities...</div>
             </div>
         </div>
     </div>
 
     <script>
-        // Generate time slots from 5:00pm to 8:30pm in 15-minute increments
-        function generateTimeSlots() {
-            const container = document.getElementById('timeSlots');
-            const startHour = 17; // 5pm in 24-hour format
-            const endHour = 20; // 8pm
-            const endMinute = 30; // 8:30pm
+        // Google Apps Script URL (same as diamond tracker)
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwE3-lXaDvLu4gR9_GAIi83YcQqeWtltJxbn2fRQZQJqwt80AAqLKYUzMTyW3aRu2O6iA/exec';
+        
+        let customActivities = [];
 
-            for (let hour = startHour; hour <= endHour; hour++) {
-                const maxMinute = (hour === endHour) ? endMinute : 60;
-                for (let minute = 0; minute < maxMinute; minute += 15) {
-                    const nextMinute = minute + 15;
-                    const nextHour = nextMinute === 60 ? hour + 1 : hour;
-                    const displayNextMinute = nextMinute === 60 ? 0 : nextMinute;
-
-                    const timeLabel = formatTime(hour, minute) + ' - ' + formatTime(nextHour, displayNextMinute);
-                    
-                    const slot = document.createElement('div');
-                    slot.className = 'time-slot';
-                    slot.innerHTML = `
-                        <span class="time-label">${timeLabel}</span>
-                        <div class="slot-content empty" data-slot-id="${hour}-${minute}">
-                            Drop here
-                        </div>
-                    `;
-                    container.appendChild(slot);
-                }
-            }
-        }
-
-        function formatTime(hour, minute) {
-            const period = hour >= 12 ? 'pm' : 'am';
-            const displayHour = hour > 12 ? hour - 12 : hour;
-            const displayMinute = minute.toString().padStart(2, '0');
-            return `${displayHour}:${displayMinute}${period}`;
-        }
-
-        // Drag and Drop functionality
-        let draggedElement = null;
-
-        function initDragAndDrop() {
-            // Set up draggable activity blocks
-            const activityBlocks = document.querySelectorAll('.activity-block');
-            activityBlocks.forEach(block => {
-                block.addEventListener('dragstart', handleDragStart);
-                block.addEventListener('dragend', handleDragEnd);
-            });
-
-            // Set up drop zones (time slots)
-            const slotContents = document.querySelectorAll('.slot-content');
-            slotContents.forEach(slot => {
-                slot.addEventListener('dragover', handleDragOver);
-                slot.addEventListener('dragleave', handleDragLeave);
-                slot.addEventListener('drop', handleDrop);
-            });
-        }
-
-        function handleDragStart(e) {
-            draggedElement = e.target;
-            e.target.classList.add('dragging');
-            e.dataTransfer.effectAllowed = 'copy';
-            e.dataTransfer.setData('text/plain', JSON.stringify({
-                activity: e.target.dataset.activity,
-                diamonds: parseInt(e.target.dataset.diamonds),
-                category: e.target.dataset.category
-            }));
-        }
-
-        function handleDragEnd(e) {
-            e.target.classList.remove('dragging');
-            draggedElement = null;
-        }
-
-        function handleDragOver(e) {
-            e.preventDefault();
-            e.dataTransfer.dropEffect = 'copy';
-            e.currentTarget.parentElement.classList.add('drag-over');
-        }
-
-        function handleDragLeave(e) {
-            e.currentTarget.parentElement.classList.remove('drag-over');
-        }
-
-        function handleDrop(e) {
-            e.preventDefault();
-            const slot = e.currentTarget;
-            slot.parentElement.classList.remove('drag-over');
-
-            const data = JSON.parse(e.dataTransfer.getData('text/plain'));
-            
-            // Create the placed activity element
-            slot.innerHTML = `
-                <div class="placed-activity ${data.category}">
-                    <span>${data.activity}</span>
-                    <button class="remove-btn" onclick="removeActivity(this, ${data.diamonds})">✕</button>
-                </div>
-            `;
-            slot.classList.remove('empty');
-            slot.classList.add('filled');
-            slot.dataset.diamonds = data.diamonds;
-
-            updateDiamondCount();
-            saveSchedule();
-        }
-
-        function removeActivity(button, diamonds) {
-            const slot = button.closest('.slot-content');
-            slot.innerHTML = 'Drop here';
-            slot.classList.remove('filled');
-            slot.classList.add('empty');
-            delete slot.dataset.diamonds;
-            updateDiamondCount();
-            saveSchedule();
-        }
-
-        function updateDiamondCount() {
-            const filledSlots = document.querySelectorAll('.slot-content.filled');
-            let total = 0;
-            filledSlots.forEach(slot => {
-                total += parseInt(slot.dataset.diamonds) || 0;
-            });
-            document.getElementById('totalDiamonds').textContent = total;
-        }
-
-        // LocalStorage functions
-        function saveSchedule() {
-            const slots = document.querySelectorAll('.slot-content');
-            const scheduleData = {};
-            
-            slots.forEach(slot => {
-                const slotId = slot.dataset.slotId;
-                if (slot.classList.contains('filled')) {
-                    const placedActivity = slot.querySelector('.placed-activity');
-                    if (placedActivity) {
-                        // Get the category from the class list
-                        const category = Array.from(placedActivity.classList).find(c => c !== 'placed-activity');
-                        const activityName = placedActivity.querySelector('span').textContent;
-                        scheduleData[slotId] = {
-                            activity: activityName,
-                            diamonds: parseInt(slot.dataset.diamonds) || 0,
-                            category: category
-                        };
+        // Initialize checkboxes for all activities
+        function initCheckboxes() {
+            const activityRows = document.querySelectorAll('.activity-row');
+            activityRows.forEach(row => {
+                const checkboxContainer = row.querySelector('.checkboxes');
+                if (checkboxContainer && checkboxContainer.children.length === 0) {
+                    // Create 4 checkboxes
+                    for (let i = 0; i < 4; i++) {
+                        const checkbox = document.createElement('div');
+                        checkbox.className = 'activity-checkbox';
+                        checkbox.dataset.index = i;
+                        checkbox.addEventListener('click', () => toggleCheckbox(checkbox, row));
+                        checkboxContainer.appendChild(checkbox);
                     }
                 }
             });
-            
-            localStorage.setItem('asherSchedule', JSON.stringify(scheduleData));
         }
 
-        function loadSchedule() {
-            const savedData = localStorage.getItem('asherSchedule');
+        function toggleCheckbox(checkbox, row) {
+            const index = parseInt(checkbox.dataset.index);
+            const checkboxes = row.querySelectorAll('.activity-checkbox');
+            const isChecked = checkbox.classList.contains('checked');
+            
+            if (isChecked) {
+                // Uncheck this and all after it
+                for (let i = index; i < checkboxes.length; i++) {
+                    checkboxes[i].classList.remove('checked');
+                    checkboxes[i].textContent = '';
+                }
+            } else {
+                // Check this and all before it
+                for (let i = 0; i <= index; i++) {
+                    checkboxes[i].classList.add('checked');
+                    checkboxes[i].textContent = '✓';
+                }
+            }
+            
+            updateDiamondCount();
+            saveActivities();
+        }
+
+        function updateDiamondCount() {
+            let total = 0;
+            const activityRows = document.querySelectorAll('.activity-row');
+            
+            activityRows.forEach(row => {
+                const diamonds = parseInt(row.dataset.diamonds) || 0;
+                const checkedCount = row.querySelectorAll('.activity-checkbox.checked').length;
+                total += diamonds * checkedCount;
+            });
+            
+            document.getElementById('totalDiamonds').textContent = total;
+        }
+
+        function saveActivities() {
+            const data = {};
+            const activityRows = document.querySelectorAll('.activity-row');
+            
+            activityRows.forEach(row => {
+                const activityName = row.dataset.activity;
+                const checkedCount = row.querySelectorAll('.activity-checkbox.checked').length;
+                if (checkedCount > 0) {
+                    data[activityName] = checkedCount;
+                }
+            });
+            
+            localStorage.setItem('asherActivities', JSON.stringify(data));
+        }
+
+        function loadActivities() {
+            const savedData = localStorage.getItem('asherActivities');
             if (!savedData) return;
             
             try {
-                const scheduleData = JSON.parse(savedData);
+                const data = JSON.parse(savedData);
                 
-                Object.keys(scheduleData).forEach(slotId => {
-                    const slot = document.querySelector(`.slot-content[data-slot-id="${slotId}"]`);
-                    if (slot) {
-                        const data = scheduleData[slotId];
-                        slot.innerHTML = `
-                            <div class="placed-activity ${data.category}">
-                                <span>${data.activity}</span>
-                                <button class="remove-btn" onclick="removeActivity(this, ${data.diamonds})">✕</button>
-                            </div>
-                        `;
-                        slot.classList.remove('empty');
-                        slot.classList.add('filled');
-                        slot.dataset.diamonds = data.diamonds;
+                Object.keys(data).forEach(activityName => {
+                    const row = document.querySelector(`.activity-row[data-activity="${activityName}"]`);
+                    if (row) {
+                        const checkboxes = row.querySelectorAll('.activity-checkbox');
+                        const count = data[activityName];
+                        
+                        for (let i = 0; i < count && i < checkboxes.length; i++) {
+                            checkboxes[i].classList.add('checked');
+                            checkboxes[i].textContent = '✓';
+                        }
                     }
                 });
                 
                 updateDiamondCount();
             } catch (e) {
-                console.error('Error loading schedule:', e);
+                console.error('Error loading activities:', e);
             }
         }
 
-        function clearSchedule() {
-            if (confirm('Clear the schedule and start fresh?')) {
-                localStorage.removeItem('asherSchedule');
+        function clearAllCheckmarks() {
+            if (confirm('Clear all checkmarks and start fresh?')) {
+                localStorage.removeItem('asherActivities');
                 
-                // Reset all slots to empty
-                const slots = document.querySelectorAll('.slot-content');
-                slots.forEach(slot => {
-                    slot.innerHTML = 'Drop here';
-                    slot.classList.remove('filled');
-                    slot.classList.add('empty');
-                    delete slot.dataset.diamonds;
+                const checkboxes = document.querySelectorAll('.activity-checkbox');
+                checkboxes.forEach(cb => {
+                    cb.classList.remove('checked');
+                    cb.textContent = '';
                 });
                 
                 updateDiamondCount();
             }
         }
 
+        // ========== Custom Activities Functions ==========
+        
+        async function loadCustomActivities() {
+            try {
+                const callbackName = 'callback_' + Date.now();
+                
+                const script = document.createElement('script');
+                script.src = SCRIPT_URL + '?action=getActivities&callback=' + callbackName;
+                
+                window[callbackName] = function(data) {
+                    customActivities = data.activities || [];
+                    renderCustomActivities();
+                    delete window[callbackName];
+                    script.remove();
+                };
+                
+                script.onerror = function() {
+                    console.error('Error loading custom activities');
+                    document.getElementById('noCustomMessage').textContent = 'Could not load custom activities';
+                };
+                
+                document.body.appendChild(script);
+                
+                // Timeout fallback
+                setTimeout(() => {
+                    if (window[callbackName]) {
+                        document.getElementById('noCustomMessage').textContent = 'No custom activities yet. Add one above!';
+                    }
+                }, 5000);
+                
+            } catch (error) {
+                console.error('Error loading custom activities:', error);
+            }
+        }
+
+        function renderCustomActivities() {
+            // Add custom activities to their respective categories
+            customActivities.forEach(activity => {
+                const categoryEl = document.querySelector(`.category[data-category="${activity.category}"]`);
+                if (categoryEl) {
+                    const activityList = categoryEl.querySelector('.activity-list');
+                    
+                    // Check if already exists
+                    if (!document.querySelector(`.activity-row[data-activity="${activity.activity}"]`)) {
+                        const row = document.createElement('div');
+                        row.className = 'activity-row custom';
+                        row.dataset.activity = activity.activity;
+                        row.dataset.diamonds = activity.diamonds;
+                        row.dataset.row = activity.row;
+                        row.innerHTML = `
+                            <span class="activity-name">${activity.activity}</span>
+                            <span class="diamond-value">+${activity.diamonds} 💎</span>
+                            <div class="checkboxes"></div>
+                            <button class="delete-btn" onclick="deleteActivity(${activity.row}, '${activity.activity}')" title="Delete">🗑️</button>
+                        `;
+                        activityList.appendChild(row);
+                    }
+                }
+            });
+
+            // Update the custom activities container message
+            const container = document.getElementById('customActivitiesContainer');
+            if (customActivities.length === 0) {
+                container.innerHTML = '<div class="no-custom">No custom activities yet. Add one above!</div>';
+            } else {
+                container.innerHTML = `<div class="no-custom">✓ ${customActivities.length} custom activit${customActivities.length === 1 ? 'y' : 'ies'} loaded</div>`;
+            }
+
+            // Reinitialize checkboxes for new rows
+            initCheckboxes();
+            loadActivities();
+        }
+
+        async function addNewActivity() {
+            const nameInput = document.getElementById('activityName');
+            const categorySelect = document.getElementById('activityCategory');
+            const diamondsSelect = document.getElementById('activityDiamonds');
+            const addBtn = document.getElementById('addActivityBtn');
+
+            const name = nameInput.value.trim();
+            const category = categorySelect.value;
+            const diamonds = parseInt(diamondsSelect.value);
+
+            if (!name) {
+                alert('Please enter an activity name');
+                return;
+            }
+
+            addBtn.disabled = true;
+            addBtn.textContent = 'Adding...';
+
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'addActivity',
+                        activity: name,
+                        category: category,
+                        diamonds: diamonds
+                    })
+                });
+
+                // Clear input
+                nameInput.value = '';
+
+                // Reload custom activities after a short delay
+                setTimeout(() => {
+                    loadCustomActivities();
+                }, 1000);
+
+            } catch (error) {
+                console.error('Error adding activity:', error);
+                alert('Error adding activity. Please try again.');
+            } finally {
+                addBtn.disabled = false;
+                addBtn.textContent = 'Add Activity';
+            }
+        }
+
+        async function deleteActivity(row, activityName) {
+            if (!confirm(`Delete "${activityName}"?`)) {
+                return;
+            }
+
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'deleteActivity',
+                        row: row
+                    })
+                });
+
+                // Remove from DOM immediately
+                const rowEl = document.querySelector(`.activity-row[data-activity="${activityName}"]`);
+                if (rowEl) {
+                    rowEl.remove();
+                }
+
+                // Reload to get fresh data
+                setTimeout(() => {
+                    loadCustomActivities();
+                }, 1000);
+
+            } catch (error) {
+                console.error('Error deleting activity:', error);
+                alert('Error deleting activity. Please try again.');
+            }
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('activityName').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                addNewActivity();
+            }
+        });
+
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
-            generateTimeSlots();
-            initDragAndDrop();
-            loadSchedule();
+            initCheckboxes();
+            loadCustomActivities();
+            loadActivities();
         });
     </script>
 </body>
