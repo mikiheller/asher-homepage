@@ -145,10 +145,7 @@
             background: rgba(0, 0, 0, 0.03);
         }
 
-        .activity-row.custom {
-            background: rgba(102, 126, 234, 0.1);
-            border: 1px dashed rgba(102, 126, 234, 0.3);
-        }
+        /* Custom activities now look the same as regular activities */
 
         .activity-name {
             flex: 1;
@@ -391,11 +388,10 @@
 
         <!-- Activities -->
         <div class="categories-container">
-            <!-- Fitness -->
+            <!-- Health and Fitness -->
             <div class="category fitness" data-category="fitness">
                 <h3 class="category-title">
-                    <span>🏃 Fitness</span>
-                    <span class="category-diamond">+1 💎 each</span>
+                    <span>🏃 Health and Fitness</span>
                 </h3>
                 <div class="activity-list">
                     <div class="activity-row" data-activity="Tennis" data-diamonds="1">
@@ -428,6 +424,11 @@
                         <span class="diamond-value">+1 💎</span>
                         <div class="checkboxes"></div>
                     </div>
+                    <div class="activity-row other-row" data-activity="Other fitness" data-diamonds="1">
+                        <span class="activity-name">Other</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
                 </div>
             </div>
 
@@ -435,7 +436,6 @@
             <div class="category brain-games" data-category="brain-games">
                 <h3 class="category-title">
                     <span>🧠 Brain Games</span>
-                    <span class="category-diamond">+1 💎 each</span>
                 </h3>
                 <div class="activity-list">
                     <div class="activity-row" data-activity="Chess" data-diamonds="1">
@@ -463,6 +463,11 @@
                         <span class="diamond-value">+1 💎</span>
                         <div class="checkboxes"></div>
                     </div>
+                    <div class="activity-row other-row" data-activity="Other brain games" data-diamonds="1">
+                        <span class="activity-name">Other</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
                 </div>
             </div>
 
@@ -470,7 +475,6 @@
             <div class="category music" data-category="music">
                 <h3 class="category-title">
                     <span>🎵 Music</span>
-                    <span class="category-diamond">+1 💎 each</span>
                 </h3>
                 <div class="activity-list">
                     <div class="activity-row" data-activity="Karaoke" data-diamonds="1">
@@ -493,6 +497,11 @@
                         <span class="diamond-value">+1 💎</span>
                         <div class="checkboxes"></div>
                     </div>
+                    <div class="activity-row other-row" data-activity="Other music" data-diamonds="1">
+                        <span class="activity-name">Other</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
                 </div>
             </div>
 
@@ -500,7 +509,6 @@
             <div class="category learning" data-category="learning">
                 <h3 class="category-title">
                     <span>📚 Learning</span>
-                    <span class="category-diamond">+2 💎 each</span>
                 </h3>
                 <div class="activity-list">
                     <div class="activity-row" data-activity="99 Nights Math" data-diamonds="2">
@@ -548,6 +556,11 @@
                         <span class="diamond-value">+1 💎</span>
                         <div class="checkboxes"></div>
                     </div>
+                    <div class="activity-row other-row" data-activity="Other learning" data-diamonds="2">
+                        <span class="activity-name">Other</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
                 </div>
             </div>
 
@@ -555,7 +568,6 @@
             <div class="category creativity" data-category="creativity">
                 <h3 class="category-title">
                     <span>🎨 Creativity</span>
-                    <span class="category-diamond">+1 💎 each</span>
                 </h3>
                 <div class="activity-list">
                     <div class="activity-row" data-activity="Drawing" data-diamonds="1">
@@ -588,6 +600,16 @@
                         <span class="diamond-value">+1 💎</span>
                         <div class="checkboxes"></div>
                     </div>
+                    <div class="activity-row" data-activity="Working on book" data-diamonds="2">
+                        <span class="activity-name">Working on book</span>
+                        <span class="diamond-value">+2 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row other-row" data-activity="Other creativity" data-diamonds="1">
+                        <span class="activity-name">Other</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
                 </div>
             </div>
 
@@ -595,7 +617,6 @@
             <div class="category relaxing" data-category="relaxing">
                 <h3 class="category-title">
                     <span>😌 Relaxing</span>
-                    <span class="category-diamond">+0 💎</span>
                 </h3>
                 <div class="activity-list">
                     <div class="activity-row" data-activity="Youtube" data-diamonds="0">
@@ -613,6 +634,11 @@
                         <span class="diamond-value">+0 💎</span>
                         <div class="checkboxes"></div>
                     </div>
+                    <div class="activity-row other-row" data-activity="Other relaxing" data-diamonds="0">
+                        <span class="activity-name">Other</span>
+                        <span class="diamond-value">+0 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
                 </div>
             </div>
 
@@ -620,7 +646,6 @@
             <div class="category being-nice" data-category="being-nice">
                 <h3 class="category-title">
                     <span>💖 Being Nice</span>
-                    <span class="category-diamond">+1 💎 each</span>
                 </h3>
                 <div class="activity-list">
                     <div class="activity-row" data-activity="Nice to brothers" data-diamonds="1">
@@ -650,6 +675,11 @@
                     </div>
                     <div class="activity-row" data-activity="Really good playdate" data-diamonds="1">
                         <span class="activity-name">Really good playdate</span>
+                        <span class="diamond-value">+1 💎</span>
+                        <div class="checkboxes"></div>
+                    </div>
+                    <div class="activity-row other-row" data-activity="Other being nice" data-diamonds="1">
+                        <span class="activity-name">Other</span>
                         <span class="diamond-value">+1 💎</span>
                         <div class="checkboxes"></div>
                     </div>
@@ -696,7 +726,7 @@
     </div>
 
     <script>
-        // Google Apps Script URL (same as diamond tracker)
+        // Google Apps Script URL
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwE3-lXaDvLu4gR9_GAIi83YcQqeWtltJxbn2fRQZQJqwt80AAqLKYUzMTyW3aRu2O6iA/exec';
         
         let customActivities = [];
@@ -739,7 +769,7 @@
             }
             
             updateDiamondCount();
-            saveActivities();
+            saveCheckmarks();
         }
 
         function updateDiamondCount() {
@@ -755,7 +785,7 @@
             document.getElementById('totalDiamonds').textContent = total;
         }
 
-        function saveActivities() {
+        function saveCheckmarks() {
             const data = {};
             const activityRows = document.querySelectorAll('.activity-row');
             
@@ -770,7 +800,7 @@
             localStorage.setItem('asherActivities', JSON.stringify(data));
         }
 
-        function loadActivities() {
+        function loadCheckmarks() {
             const savedData = localStorage.getItem('asherActivities');
             if (!savedData) return;
             
@@ -792,7 +822,7 @@
                 
                 updateDiamondCount();
             } catch (e) {
-                console.error('Error loading activities:', e);
+                console.error('Error loading checkmarks:', e);
             }
         }
 
@@ -810,62 +840,79 @@
             }
         }
 
-        // ========== Custom Activities Functions ==========
+        // ========== Custom Activities Functions (Google Apps Script) ==========
         
-        async function loadCustomActivities() {
-            try {
-                const callbackName = 'callback_' + Date.now();
-                
-                const script = document.createElement('script');
-                script.src = SCRIPT_URL + '?action=getActivities&callback=' + callbackName;
-                
-                window[callbackName] = function(data) {
-                    customActivities = data.activities || [];
-                    renderCustomActivities();
+        function loadCustomActivities() {
+            const container = document.getElementById('customActivitiesContainer');
+            container.innerHTML = '<div class="no-custom">Loading custom activities...</div>';
+            
+            const callbackName = 'activitiesCallback_' + Date.now();
+            
+            window[callbackName] = function(data) {
+                customActivities = data.activities || [];
+                renderCustomActivities();
+                delete window[callbackName];
+                const scriptEl = document.getElementById('activitiesScript');
+                if (scriptEl) scriptEl.remove();
+            };
+            
+            const script = document.createElement('script');
+            script.id = 'activitiesScript';
+            script.src = SCRIPT_URL + '?action=getActivities&callback=' + callbackName;
+            
+            script.onerror = function() {
+                console.error('Error loading custom activities');
+                container.innerHTML = '<div class="no-custom">Could not load custom activities. Check your connection.</div>';
+                delete window[callbackName];
+            };
+            
+            document.body.appendChild(script);
+            
+            // Timeout fallback
+            setTimeout(() => {
+                if (window[callbackName]) {
+                    console.log('Activities request timed out');
+                    container.innerHTML = '<div class="no-custom">No custom activities yet. Add one above!</div>';
                     delete window[callbackName];
-                    script.remove();
-                };
-                
-                script.onerror = function() {
-                    console.error('Error loading custom activities');
-                    document.getElementById('noCustomMessage').textContent = 'Could not load custom activities';
-                };
-                
-                document.body.appendChild(script);
-                
-                // Timeout fallback
-                setTimeout(() => {
-                    if (window[callbackName]) {
-                        document.getElementById('noCustomMessage').textContent = 'No custom activities yet. Add one above!';
-                    }
-                }, 5000);
-                
-            } catch (error) {
-                console.error('Error loading custom activities:', error);
-            }
+                }
+            }, 10000);
+        }
+
+        function getDiamondDisplay(diamonds) {
+            return `+${diamonds} 💎`;
         }
 
         function renderCustomActivities() {
+            // First, remove any existing custom activity rows
+            document.querySelectorAll('.activity-row.custom').forEach(row => row.remove());
+            
             // Add custom activities to their respective categories
             customActivities.forEach(activity => {
                 const categoryEl = document.querySelector(`.category[data-category="${activity.category}"]`);
                 if (categoryEl) {
                     const activityList = categoryEl.querySelector('.activity-list');
+                    const otherRow = activityList.querySelector('.other-row');
                     
-                    // Check if already exists
-                    if (!document.querySelector(`.activity-row[data-activity="${activity.activity}"]`)) {
+                    // Check if already exists (avoid duplicates)
+                    if (!document.querySelector(`.activity-row[data-activity="${CSS.escape(activity.activity)}"]`)) {
                         const row = document.createElement('div');
                         row.className = 'activity-row custom';
                         row.dataset.activity = activity.activity;
                         row.dataset.diamonds = activity.diamonds;
                         row.dataset.row = activity.row;
+                        
                         row.innerHTML = `
                             <span class="activity-name">${activity.activity}</span>
-                            <span class="diamond-value">+${activity.diamonds} 💎</span>
+                            <span class="diamond-value">${getDiamondDisplay(activity.diamonds)}</span>
                             <div class="checkboxes"></div>
-                            <button class="delete-btn" onclick="deleteActivity(${activity.row}, '${activity.activity}')" title="Delete">🗑️</button>
                         `;
-                        activityList.appendChild(row);
+                        
+                        // Insert before "Other" row if it exists, otherwise append
+                        if (otherRow) {
+                            activityList.insertBefore(row, otherRow);
+                        } else {
+                            activityList.appendChild(row);
+                        }
                     }
                 }
             });
@@ -875,12 +922,12 @@
             if (customActivities.length === 0) {
                 container.innerHTML = '<div class="no-custom">No custom activities yet. Add one above!</div>';
             } else {
-                container.innerHTML = `<div class="no-custom">✓ ${customActivities.length} custom activit${customActivities.length === 1 ? 'y' : 'ies'} loaded</div>`;
+                container.innerHTML = `<div class="no-custom">✓ ${customActivities.length} custom activit${customActivities.length === 1 ? 'y' : 'ies'} synced from cloud</div>`;
             }
 
             // Reinitialize checkboxes for new rows
             initCheckboxes();
-            loadActivities();
+            loadCheckmarks();
         }
 
         async function addNewActivity() {
@@ -898,10 +945,18 @@
                 return;
             }
 
+            // Check if activity already exists
+            const existingActivity = document.querySelector(`.activity-row[data-activity="${CSS.escape(name)}"]`);
+            if (existingActivity) {
+                alert('An activity with this name already exists!');
+                return;
+            }
+
             addBtn.disabled = true;
             addBtn.textContent = 'Adding...';
 
             try {
+                // Send to Google Apps Script
                 await fetch(SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -919,15 +974,19 @@
                 // Clear input
                 nameInput.value = '';
 
-                // Reload custom activities after a short delay
+                // Show success feedback
+                addBtn.textContent = 'Added! ✓';
+                
+                // Reload custom activities after a short delay to get fresh data
                 setTimeout(() => {
                     loadCustomActivities();
-                }, 1000);
+                    addBtn.disabled = false;
+                    addBtn.textContent = 'Add Activity';
+                }, 1500);
 
             } catch (error) {
                 console.error('Error adding activity:', error);
                 alert('Error adding activity. Please try again.');
-            } finally {
                 addBtn.disabled = false;
                 addBtn.textContent = 'Add Activity';
             }
@@ -939,6 +998,7 @@
             }
 
             try {
+                // Send delete request to Google Apps Script
                 await fetch(SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -951,16 +1011,29 @@
                     })
                 });
 
-                // Remove from DOM immediately
-                const rowEl = document.querySelector(`.activity-row[data-activity="${activityName}"]`);
+                // Remove from DOM immediately for instant feedback
+                const rowEl = document.querySelector(`.activity-row[data-activity="${CSS.escape(activityName)}"]`);
                 if (rowEl) {
-                    rowEl.remove();
+                    rowEl.style.opacity = '0.5';
+                    rowEl.style.pointerEvents = 'none';
                 }
 
-                // Reload to get fresh data
+                // Also remove from checkmarks localStorage
+                const savedData = localStorage.getItem('asherActivities');
+                if (savedData) {
+                    try {
+                        const data = JSON.parse(savedData);
+                        delete data[activityName];
+                        localStorage.setItem('asherActivities', JSON.stringify(data));
+                    } catch (e) {
+                        // ignore
+                    }
+                }
+
+                // Reload to get fresh data and correct row numbers
                 setTimeout(() => {
                     loadCustomActivities();
-                }, 1000);
+                }, 1500);
 
             } catch (error) {
                 console.error('Error deleting activity:', error);
@@ -979,7 +1052,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             initCheckboxes();
             loadCustomActivities();
-            loadActivities();
         });
     </script>
 </body>
