@@ -374,6 +374,208 @@
         .hidden {
             display: none;
         }
+
+        /* Correct balance section */
+        .correct-section {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid #9b59b6;
+        }
+
+        .correct-section h2 {
+            color: #9b59b6;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .correct-row {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .correct-input {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px;
+            font-size: 1.2rem;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            border: 3px solid #ddd;
+            border-radius: 12px;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .correct-input:focus {
+            border-color: #9b59b6;
+        }
+
+        .correct-btn {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .correct-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(155, 89, 182, 0.4);
+        }
+
+        .correct-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .correct-note {
+            font-size: 0.85rem;
+            color: #666;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Add rewards section */
+        .add-reward-section {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid #f5a623;
+        }
+
+        .add-reward-section h2 {
+            color: #f5a623;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .add-reward-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            padding: 12px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            border: 3px solid #ddd;
+            border-radius: 12px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #f5a623;
+        }
+
+        .form-group.name-input {
+            flex: 2;
+            min-width: 150px;
+        }
+
+        .form-group.cost-input {
+            width: 120px;
+        }
+
+        .add-reward-btn {
+            background: linear-gradient(135deg, #f5a623 0%, #e67e22 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .add-reward-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(245, 166, 35, 0.4);
+        }
+
+        .add-reward-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .custom-rewards-list {
+            margin-top: 15px;
+        }
+
+        .custom-reward-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+
+        .custom-reward-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .custom-reward-cost {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .delete-reward-btn {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+            padding: 0 5px;
+        }
+
+        .delete-reward-btn:hover {
+            opacity: 1;
+        }
+
+        .no-custom-rewards {
+            color: #999;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -430,6 +632,10 @@
                         <span class="reward-name">🎬 Mom & Dad late-night movie night</span>
                         <span class="reward-cost">75 💎</span>
                     </button>
+                    <button class="reward-btn" data-cost="100" onclick="cashOutReward(100, '100 diamonds in 99NITF')">
+                        <span class="reward-name">💵 100 diamonds in 99NITF</span>
+                        <span class="reward-cost">100 💎</span>
+                    </button>
                     <button class="reward-btn" data-cost="150" onclick="cashOutReward(150, 'Mom & Dad Day')">
                         <span class="reward-name">👨‍👩‍👦 Mom & Dad Day</span>
                         <span class="reward-cost">150 💎</span>
@@ -446,9 +652,30 @@
                         <span class="reward-name">🏰 Trip to Disneyland / LEGOLAND (your choice)</span>
                         <span class="reward-cost">3,000 💎</span>
                     </button>
+                    <!-- Custom rewards will be added here -->
+                    <div id="customRewardsList"></div>
                 </div>
                 <div class="cashout-success" id="cashoutMessage">
                     ✓ Reward redeemed!
+                </div>
+            </div>
+
+            <!-- Add New Reward Section -->
+            <div class="add-reward-section">
+                <h2>➕ Add New Reward</h2>
+                <div class="add-reward-form">
+                    <div class="form-group name-input">
+                        <label for="rewardName">Reward Name</label>
+                        <input type="text" id="rewardName" placeholder="e.g., 🎮 New video game">
+                    </div>
+                    <div class="form-group cost-input">
+                        <label for="rewardCost">Cost (💎)</label>
+                        <input type="number" id="rewardCost" min="1" placeholder="50" value="">
+                    </div>
+                    <button class="add-reward-btn" onclick="addCustomReward()">Add Reward</button>
+                </div>
+                <div class="custom-rewards-list" id="customRewardsListDisplay">
+                    <div class="no-custom-rewards">No custom rewards yet</div>
                 </div>
             </div>
 
@@ -457,6 +684,19 @@
                 <h2>Diamond History</h2>
                 <div class="history-list" id="historyList">
                     <!-- History items will be generated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Correct Balance Section -->
+            <div class="correct-section">
+                <h2>🔧 Correct Balance</h2>
+                <div class="correct-row">
+                    <input type="number" id="correctInput" class="correct-input" placeholder="89" value="">
+                    <button class="correct-btn" id="correctBtn" onclick="correctBalance()">Set to This Amount</button>
+                </div>
+                <p class="correct-note">Use this if the diamond count is wrong. Enter what the total SHOULD be.</p>
+                <div class="success-message" id="correctMessage">
+                    ✓ Balance corrected!
                 </div>
             </div>
         </div>
@@ -531,6 +771,9 @@
 
             // Update reward button states
             updateRewardButtons(data.total);
+
+            // Also update custom rewards
+            renderCustomRewards();
 
             // Update history
             const historyList = document.getElementById('historyList');
@@ -721,6 +964,166 @@
             document.getElementById('dateDisplay').textContent = today.toLocaleDateString('en-US', options);
         }
 
+        // ========== Correct Balance Functions ==========
+        async function correctBalance() {
+            if (isLoading) return;
+
+            const input = document.getElementById('correctInput');
+            const btn = document.getElementById('correctBtn');
+            const targetBalance = parseInt(input.value);
+
+            if (isNaN(targetBalance) || targetBalance < 0) {
+                alert('Please enter a valid number');
+                return;
+            }
+
+            const currentTotal = parseInt(document.getElementById('totalCount').textContent);
+            const difference = targetBalance - currentTotal;
+
+            if (difference === 0) {
+                alert('The balance is already ' + targetBalance + '!');
+                return;
+            }
+
+            if (!confirm(`This will ${difference > 0 ? 'add' : 'remove'} ${Math.abs(difference)} diamonds to make the total ${targetBalance}. Continue?`)) {
+                return;
+            }
+
+            isLoading = true;
+            btn.disabled = true;
+            btn.textContent = 'Saving...';
+
+            try {
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        date: getTodayString(),
+                        diamonds: difference,
+                        note: 'Balance correction'
+                    })
+                });
+
+                // Clear input
+                input.value = '';
+
+                // Show success message
+                const correctMsg = document.getElementById('correctMessage');
+                correctMsg.classList.add('show');
+                setTimeout(() => {
+                    correctMsg.classList.remove('show');
+                }, 2000);
+
+                // Reload data
+                setTimeout(() => {
+                    loadData();
+                }, 1000);
+
+            } catch (error) {
+                console.error('Error correcting balance:', error);
+                alert('Error correcting balance. Please try again.');
+            } finally {
+                isLoading = false;
+                btn.disabled = false;
+                btn.textContent = 'Set to This Amount';
+            }
+        }
+
+        // ========== Custom Rewards Functions (localStorage) ==========
+        function getCustomRewards() {
+            const saved = localStorage.getItem('asherCustomRewards');
+            if (!saved) return [];
+            try {
+                return JSON.parse(saved);
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveCustomRewards(rewards) {
+            localStorage.setItem('asherCustomRewards', JSON.stringify(rewards));
+        }
+
+        function addCustomReward() {
+            const nameInput = document.getElementById('rewardName');
+            const costInput = document.getElementById('rewardCost');
+            
+            const name = nameInput.value.trim();
+            const cost = parseInt(costInput.value);
+
+            if (!name) {
+                alert('Please enter a reward name');
+                return;
+            }
+
+            if (isNaN(cost) || cost < 1) {
+                alert('Please enter a valid cost (at least 1 diamond)');
+                return;
+            }
+
+            const rewards = getCustomRewards();
+            
+            // Check for duplicate
+            if (rewards.some(r => r.name.toLowerCase() === name.toLowerCase())) {
+                alert('A reward with this name already exists!');
+                return;
+            }
+
+            rewards.push({ name, cost, id: Date.now() });
+            saveCustomRewards(rewards);
+
+            // Clear inputs
+            nameInput.value = '';
+            costInput.value = '';
+
+            // Refresh display
+            renderCustomRewards();
+        }
+
+        function deleteCustomReward(id) {
+            if (!confirm('Delete this reward?')) return;
+
+            let rewards = getCustomRewards();
+            rewards = rewards.filter(r => r.id !== id);
+            saveCustomRewards(rewards);
+            renderCustomRewards();
+        }
+
+        function renderCustomRewards() {
+            const rewards = getCustomRewards();
+            const currentTotal = parseInt(document.getElementById('totalCount').textContent) || 0;
+
+            // Update the custom rewards buttons in the cashout section
+            const customRewardsList = document.getElementById('customRewardsList');
+            if (rewards.length === 0) {
+                customRewardsList.innerHTML = '';
+            } else {
+                customRewardsList.innerHTML = rewards.map(r => `
+                    <button class="reward-btn" data-cost="${r.cost}" onclick="cashOutReward(${r.cost}, '${r.name.replace(/'/g, "\\'")}')" ${currentTotal < r.cost ? 'disabled' : ''}>
+                        <span class="reward-name">${r.name}</span>
+                        <span class="reward-cost">${r.cost.toLocaleString()} 💎</span>
+                    </button>
+                `).join('');
+            }
+
+            // Update the custom rewards list display (for managing/deleting)
+            const listDisplay = document.getElementById('customRewardsListDisplay');
+            if (rewards.length === 0) {
+                listDisplay.innerHTML = '<div class="no-custom-rewards">No custom rewards yet</div>';
+            } else {
+                listDisplay.innerHTML = rewards.map(r => `
+                    <div class="custom-reward-item">
+                        <span class="custom-reward-name">${r.name}</span>
+                        <span class="custom-reward-cost">${r.cost.toLocaleString()} 💎</span>
+                        <button class="delete-reward-btn" onclick="deleteCustomReward(${r.id})">×</button>
+                    </div>
+                `).join('');
+            }
+        }
+
         // Allow Enter key to submit
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('diamondInput').addEventListener('keypress', function(e) {
@@ -729,8 +1132,27 @@
                 }
             });
 
+            document.getElementById('correctInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    correctBalance();
+                }
+            });
+
+            document.getElementById('rewardName').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addCustomReward();
+                }
+            });
+
+            document.getElementById('rewardCost').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addCustomReward();
+                }
+            });
+
             showTodayDate();
             loadData();
+            renderCustomRewards();
         });
     </script>
 </body>
